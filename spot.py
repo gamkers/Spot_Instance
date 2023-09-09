@@ -16,14 +16,18 @@ def run_spotinfo(args):
     result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return result.stdout.decode('utf-8'), result.stderr.decode('utf-8')
 
-# Set page title and add some space on the left and right
-st.title(" AWS Spot Instance Calculator ")
-st.write(" ")
+# Create left and right containers
+left_container, right_container = st.beta_columns([2, 1])
 
-st.header("What is Spot Instances?")
-# Explanation of AWS Spot Instances
-st.write("AWS Spot Instances are a cost-effective option to use AWS cloud computing resources. They allow you to take advantage of unused AWS EC2 capacity at a lower cost. Spot Instances are ideal for workloads like batch processing, data analysis, rendering, and simulations. However, they can be interrupted with short notice, so it's important to design your applications to handle interruptions gracefully.")
-st.write(" ")
+# Left container content - Explanation of AWS Spot Instances
+left_container.title("Amazon EC2 Spot Instances")
+left_container.write("Amazon EC2 Spot Instances let you take advantage of unused EC2 capacity in the AWS cloud. Spot Instances are available at up to a 90% discount compared to On-Demand prices. You can use Spot Instances for various stateless, fault-tolerant, or flexible applications such as big data, containerized workloads, CI/CD, web servers, high-performance computing (HPC), and test & development workloads. Because Spot Instances are tightly integrated with AWS services such as Auto Scaling, EMR, ECS, CloudFormation, Data Pipeline and AWS Batch, you can choose how to launch and maintain your applications running on Spot Instances.")
+left_container.write("Moreover, you can easily combine Spot Instances with On-Demand, RIs and Savings Plans Instances to further optimize workload cost with performance. Due to the operating scale of AWS, Spot Instances can offer the scale and cost savings to run hyper-scale workloads. You also have the option to hibernate, stop or terminate your Spot Instances when EC2 reclaims the capacity back with two-minutes of notice. Only on AWS, you have easy access to unused compute capacity at such massive scale - all at up to a 90% discount.")
+
+# Right container content - YouTube video
+right_container.title("Amazon EC2 Spot Instances Video")
+right_container.write("Watch this video to learn more about Amazon EC2 Spot Instances:")
+right_container.iframe(src="https://www.youtube.com/embed/aRlY3VBX3Lc", width=380, height=214, frameborder=0, allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen=True)
 
 # Create a sidebar for user input
 st.sidebar.title("Settings")
