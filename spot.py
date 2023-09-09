@@ -18,7 +18,7 @@ def run_spotinfo(args):
     result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return result.stdout.decode('utf-8'), result.stderr.decode('utf-8')
 
-st.title("AWS EC2 Instance Filter")
+st.title("AWS Spot Instance Calculator")
 
 # Get user input
 st.write("Choose EC2 instance type:")
