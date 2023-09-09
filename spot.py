@@ -2,6 +2,7 @@ import streamlit as st
 import subprocess
 import os
 
+st.set_page_config(page_title="Spotify", page_icon=":tada:", layout='wide')
 # Set the file permissions to allow execution
 os.chmod('./spotinfo', 0o755)
 
