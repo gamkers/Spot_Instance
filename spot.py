@@ -16,9 +16,6 @@ def run_spotinfo(args):
     result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return result.stdout.decode('utf-8'), result.stderr.decode('utf-8')
 
-# Create left and right containers
-left_container = st.empty()
-right_container = st.empty()
 
 # Left container content - Explanation of AWS Spot Instances
 left_container.title("Amazon EC2 Spot Instances")
