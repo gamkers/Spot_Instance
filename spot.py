@@ -20,6 +20,7 @@ def run_spotinfo(args):
 st.title(" AWS Spot Instance Calculator ")
 st.write(" ")
 
+st.header("What is Spot Instances")
 # Explanation of AWS Spot Instances
 st.write("AWS Spot Instances are a cost-effective option to use AWS cloud computing resources. They allow you to take advantage of unused AWS EC2 capacity at a lower cost. Spot Instances are ideal for workloads like batch processing, data analysis, rendering, and simulations. However, they can be interrupted with short notice, so it's important to design your applications to handle interruptions gracefully.")
 st.write(" ")
