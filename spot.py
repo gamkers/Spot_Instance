@@ -25,8 +25,9 @@ st.write("Moreover, you can easily combine Spot Instances with On-Demand, RIs an
 # Right container content - YouTube video
 st.title("Amazon EC2 Spot Instances Video")
 st.write("Watch this video to learn more about Amazon EC2 Spot Instances:")
-st.iframe(src="https://www.youtube.com/embed/aRlY3VBX3Lc", width=380, height=214, frameborder=0, allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen=True)
-
+video_url = "https://www.youtube.com/embed/aRlY3VBX3Lc"
+iframe_component = f'<iframe width="380" height="214" src="{video_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+components.iframe(iframe_component)
 # Create a sidebar for user input
 st.sidebar.title("Settings")
 instance_choice = st.sidebar.selectbox("Choose EC2 instance type:", [
